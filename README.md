@@ -8,10 +8,10 @@ i. Clone the repository
 
 ii. Open command prompt or terminal and type:
 
-$ pip install -r requirements.txt
+` $ pip install -r requirements.txt `
 
 iii. Run the program.
 
-$ python ./main.py
+` $ python ./main.py `
 
 ### Enjoy using the program :)
