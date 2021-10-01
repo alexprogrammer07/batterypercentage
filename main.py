@@ -1,3 +1,4 @@
+# Importing modules
 from plyer import notification
 import psutil
 import time
@@ -45,6 +46,6 @@ if __name__ == '__main__':
         notify(f"{str(percent)}% Remaining. I am not hungry! 🙄 \nI can last {hour_left} hours and {minute_left}"
                f" minutes!", "full.ico")
 
-    elif percent < 15 and not charging:
+    elif percent < 25 and not charging:
         notify(f"{str(percent)}% Remaining. I am very Hungry 🥺 \nI will die in {hour_left} hours and {minute_left}"
                f" minutes!", "0.ico")
