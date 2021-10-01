@@ -20,6 +20,7 @@ def notify(text, icon):
 
 
 if __name__ == '__main__':
+    """ Runs if the program is run and not imported as module"""
 
     battery = psutil.sensors_battery()  # Determining battery state
     percent = battery.percent  # getting battery percent
