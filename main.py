@@ -32,7 +32,7 @@ if __name__ == '__main__':
     hour_left = time.strftime("%H", time.gmtime(seconds))  # Estimated hours remaining
     minute_left = time.strftime("%M", time.gmtime(seconds))  # Estimated minutes remaining
 
-    if percent <= 40 and not charging:
+    if percent <= 40 and not charging:  # If else block begins
         notify(f"{str(percent)}% Remaining. Please feed me as soon as possible! 🙁 \nI will die in {hour_left} hours "
                f"and {minute_left} minutes", "low.ico")
 
@@ -41,7 +41,7 @@ if __name__ == '__main__':
                f"and {minute_left} minutes!", "80.ico")
 
     elif charging and percent < 50:
-        notify(f"{str(percent)}% Remaining. I am feeling happy! 😄 \nYou are feeding me!", "charge.ico")
+        notify(f"{str(percent)}% Remaining. I am feeling happy! 😄 \nYou are feeding me!", "charge.ico")  # Send notification if triggers
 
     elif charging and percent > 95:
         notify(f"{str(percent)}% Remaining. I am not hungry! 🙄 \nI can last {hour_left} hours and {minute_left}"
