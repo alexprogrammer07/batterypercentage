@@ -19,8 +19,8 @@ def notify(text, icon):
         timeout=15)
 
 
-if __name__ == '__main__':
-    """ Runs if the program is run and not imported as module"""
+if (__name__ == '__main__'):
+    # Runs if the program is run and not imported as module
 
     battery = psutil.sensors_battery()  # Determining battery state
     percent = battery.percent  # getting battery percent
@@ -33,20 +33,13 @@ if __name__ == '__main__':
     minute_left = time.strftime("%M", time.gmtime(seconds))  # Estimated minutes remaining
 
     if percent <= 40 and not charging:  # If else block begins
-        notify(f"{str(percent)}% Remaining. Please feed me as soon as possible! 🙁 \nI will die in {hour_left} hours "
+        notify(f"{str(percent)}% Remaining. Please feed me as soon as possible! \nI will die in {hour_left} hours "
                f"and {minute_left} minutes", "low.ico")
 
-    elif charging and percent > 80:
-        notify(f"{str(percent)}% Remaining. I have finished eating! 😃 \nI will not be hungry for {hour_left} hours "
-               f"and {minute_left} minutes!", "80.ico")
+    elif charging and percent > 80:notify(f"{str(percent)}% Remaining. I have finished eating! \nI will not be hungry for {hour_left} hours " f"and {minute_left} minutes!", "80.ico")
 
-    elif charging and percent < 50:
-        notify(f"{str(percent)}% Remaining. I am feeling happy! 😄 \nYou are feeding me!", "charge.ico")  # Send notification if triggers
+    elif charging and percent < 50:notify(f"{str(percent)}% Remaining. I am feeling happy! \nYou are feeding me!", "charge.ico")  # Send notification if triggers
 
-    elif charging and percent > 95:
-        notify(f"{str(percent)}% Remaining. I am not hungry! 🙄 \nI can last {hour_left} hours and {minute_left}"
-               f" minutes!", "full.ico")
+    elif charging and percent > 95:notify(f"{str(percent)}% Remaining. I am not hungry! \nI can last {hour_left} hours and {minute_left}"f" minutes!", "full.ico")
 
-    elif percent < 25 and not charging:
-        notify(f"{str(percent)}% Remaining. I am very Hungry 🥺 \nI will die in {hour_left} hours and {minute_left}"
-               f" minutes!", "0.ico")
+    elif percent < 25 and not charging: notify(f"{str(percent)}% Remaining. I am very Hungry \nI will die in {hour_left} hours and {minute_left}"f" minutes!", "0.ico")
